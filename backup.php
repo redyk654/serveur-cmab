@@ -219,7 +219,7 @@ class BackupMySQL extends mysqli {
 new BackupMySQL(array(
 	'username' => 'root',
 	'passwd' => '',
-	'dbname' => 'cma',
+	'dbname' => 'cmab',
 	'dossier' => './sauvegarde/'
 	));
 

@@ -7,7 +7,7 @@
         $medoc =  json_decode($_POST['medoc'], true);
 
         try {
-            $bdd = new PDO('mysql:host=localhost;dbname=cma;charset=utf8', 'root', '');
+            $bdd = new PDO('mysql:host=localhost;dbname=cmab;charset=utf8', 'root', '');
         }
         catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());

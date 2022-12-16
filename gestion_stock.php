@@ -2,7 +2,7 @@
     header('Access-Control-Allow-Origin: *');
 
     try {
-        $bdd = new PDO('mysql:host=localhost;dbname=cma;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=localhost;dbname=cmab;charset=utf8', 'root', '');
     }
     catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
@@ -38,12 +38,13 @@
                 )
             );
 
-            $req3 = $bdd->prepare("UPDATE medicaments SET en_stock = ?, designation = ?, categorie = ?, genre = ?, pu_vente= ?, min_rec = ?, date_peremption = ?, conditionnement = ? WHERE id = ?");
+            $req3 = $bdd->prepare("UPDATE medicaments SET en_stock = ?, designation = ?, classe = ?, categorie = ?, genre = ?, pu_vente= ?, min_rec = ?, date_peremption = ?, conditionnement = ? WHERE id = ?");
 
             $req3->execute(
                 array(
                     $nv_stock,
                     $produit['designation'],
+                    $produit['classe'],
                     $produit['categorie'],
                     $produit['genre'],
                     $produit['pu_vente'],
